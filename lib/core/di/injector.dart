@@ -1,4 +1,5 @@
 import 'package:api_clean_architecture/core/networking/network_service.dart';
+import 'package:api_clean_architecture/features/product_listing/data/datasource/listing_datasource.dart';
 import 'package:get_it/get_it.dart';
 
 class Injector {
@@ -9,7 +10,7 @@ class Injector {
       () => NetworkService(),
     );
     injectorInstatnce.registerLazySingleton<ListingDatasource>(
-      () => ListingDatasourceImpl(injectorInstatnce<NetworkService>()),
+      () => ListingDataSourceImpl(injectorInstatnce<NetworkService>()),
     );
     injectorInstatnce.registerLazySingleton<ListingRepository>(
       () => ListingRepositoryImpl(injectorInstatnce<ListingDatasource>()),

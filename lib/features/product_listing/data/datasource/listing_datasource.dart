@@ -11,9 +11,9 @@ abstract interface class ListingDatasource {
   Future<Either<Failure, List<ListingEntity>>> getAllProducts();
 }
 
-class ListDataSourceImpl implements ListingDatasource {
+class ListingDataSourceImpl implements ListingDatasource {
   final NetworkService networkService;
-  ListDataSourceImpl(this.networkService);
+  ListingDataSourceImpl(this.networkService);
 
   @override
   Future<Either<Failure, List<ListingEntity>>> getAllProducts() async {
