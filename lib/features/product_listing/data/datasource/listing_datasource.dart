@@ -7,7 +7,7 @@ import 'package:api_clean_architecture/features/product_listing/domain/entity/li
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-abstract interface class ListingDatasource {
+abstract class ListingDatasource {
   Future<Either<Failure, List<ListingEntity>>> getAllProducts();
 }
 
